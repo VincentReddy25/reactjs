@@ -114,7 +114,7 @@
 # Projects
 
 - Counter
-- ToDo (full scale)
+- ToDo
 - Weather App
 - Password Generator
 - Notes Application
