@@ -11,18 +11,19 @@ export default function App() {
   }
 
   const taskComplete = (index) => {
-
     setData(prev => prev.filter((_, i) => i !== index));
     console.log(data);
-
-
   }
 
   return (
     <>
       <h1>To-do App</h1>
-      <input type="text" onChange={(e) => setInput(e.target.value)} />
-      <button onClick={() => addTask()} onKeyDown={(e) => { if (e.key === "Enter") addTask() }}>Add Task</button>
+      <input type="text" onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          addTask();
+        }
+      }} />
+      <button onClick={() => addTask()}>Add Task</button>
 
       <ul>
         {data.map((value, index) => (
