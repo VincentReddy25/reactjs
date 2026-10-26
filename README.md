@@ -110,3 +110,11 @@
             </>
         )
     }
+
+# Projects
+
+- Counter
+- ToDo (full scale)
+- Weather App
+- Password Generator
+- Notes Application
