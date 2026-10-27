@@ -52,7 +52,28 @@ h1 {
   color: #fff;
 }
 
-.todo-list {
+.task-sections {
+  display: grid;
+  gap: 20px;
+}
+
+.task-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.todo-list,
+.completed-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -61,19 +82,49 @@ h1 {
   gap: 10px;
 }
 
-.todo-item {
+.todo-item,
+.completed-item,
+.empty-state {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 10px 12px;
-  border: 1px solid #e5e7eb;
   border-radius: 8px;
+}
+
+.todo-item {
+  border: 1px solid #e5e7eb;
   background: #f9fafb;
+}
+
+.completed-item {
+  border: 1px solid #bbf7d0;
+  background: #ecfdf5;
+  color: #166534;
+  text-decoration: line-through;
+}
+
+.empty-state {
+  border: 1px dashed #cbd5e1;
+  background: #fff;
+  color: #64748b;
+  justify-content: center;
 }
 
 .complete-btn {
   padding: 6px 10px;
   background: #ef4444;
   color: #fff;
+}
+
+.complete-btn:hover,
+.add-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.add-btn,
+.complete-btn {
+  transition: all 0.2s ease;
 }

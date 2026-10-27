@@ -4,6 +4,7 @@ import "./App.css"
 export default function App() {
   const [input, setInput] = useState("")
   const [data, setData] = useState([])
+  const [completed, setCompleted] = useState([])
 
   const addTask = () => {
     const trimmed = input.trim()
@@ -14,7 +15,10 @@ export default function App() {
   }
 
   const taskComplete = (index) => {
+
+    setCompleted(prev => [...prev, data[index]])
     setData((prev) => prev.filter((_, i) => i !== index))
+
   }
 
   return (
@@ -36,14 +40,39 @@ export default function App() {
         <button className="add-btn" onClick={addTask}>Add Task</button>
       </div>
 
-      <ul className="todo-list">
-        {data.map((value, index) => (
-          <li className="todo-item" key={index}>
-            <span>{value}</span>
-            <button className="complete-btn" onClick={() => taskComplete(index)}>Complete</button>
-          </li>
-        ))}
-      </ul>
+      <div className="task-sections">
+        <div className="task-section">
+          <h3 className="section-title">To be done</h3>
+          <ul className="todo-list">
+            {data.length === 0 ? (
+              <li className="empty-state">No tasks yet. Add one above.</li>
+            ) : (
+              data.map((value, index) => (
+                <li className="todo-item" key={index}>
+                  <span>{value}</span>
+                  <button className="complete-btn" onClick={() => taskComplete(index)}>Complete</button>
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
+
+        <div className="task-section">
+          <h3 className="section-title">Completed</h3>
+          <ul className="completed-list">
+            {completed.length === 0 ? (
+              <li className="empty-state">Completed tasks will appear here.</li>
+            ) : (
+              completed.map((value, index) => (
+                <li className="completed-item" key={index}>
+                  <span>{value}</span>
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
+      </div>
+
     </div>
   )
 }
