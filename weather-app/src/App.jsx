@@ -4,14 +4,13 @@ import axios from 'axios'
 export default function App() {
 
   const [city, setCity] = useState("")
-  const [data, setData] = useState([])
-  const API_KEY = "a72e3f93515bd8af931d83b3fe1bff25"
+  const [data, setData] = useState(null)
+  const API_KEY = "your_api_key"
 
   const getWeatherData = async () => {
     try {
       const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
-      setData(res)
-
+      setData(res.data)
     } catch (err) {
       console.log(err);
     }
@@ -24,7 +23,16 @@ export default function App() {
       <input type="text" onChange={e => setCity(e.target.value)} />
       <button onClick={getWeatherData}>get weather</button>
       <div>
-        {/* {data.map(value)} */}
+
+        {data && (
+          <>
+            <h2>{data.name}</h2>
+            <p>Temperature: {data.main.temp}°C</p>
+            <p>Weather: {data.weather[0].description}</p>
+            <p>Humidity: {data.main.humidity}%</p>
+          </>
+        )}
+
       </div>
     </>
   )
