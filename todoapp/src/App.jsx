@@ -21,6 +21,10 @@ export default function App() {
 
   }
 
+  const deleteTask = (index) => {
+    setData(prev => prev.filter((_, i) => i !== index))
+  }
+
   return (
     <div className="todo-app">
       <h1>To-do App</h1>
@@ -50,7 +54,10 @@ export default function App() {
               data.map((value, index) => (
                 <li className="todo-item" key={index}>
                   <span>{value}</span>
-                  <button className="complete-btn" onClick={() => taskComplete(index)}>Complete</button>
+                  <span>
+                    <button className="complete-btn" onClick={() => taskComplete(index)}>Complete</button>
+                    <button onClick={() => deleteTask(index)}>delete</button>
+                  </span>
                 </li>
               ))
             )}
