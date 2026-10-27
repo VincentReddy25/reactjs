@@ -1,34 +1,38 @@
 # Syllabus
 
-    - Installing Node
-    - Creating React App (cra, vite)
-    - Folder Structure
-    - Fragments - <> </>
-    - Components
-        - Functional Components
-    - Props
-        - Passing
-        - Default Props
-    - List and keys
-    - React Router DOM
-    - Hooks
-        - useState
-        - useEffect
-        - useContext/ContextAPI
+- Installing Node
+- Creating React App (cra, vite)
+- Folder Structure
+- Fragments - <> </>
+- Components
+  - Functional Components
+- Props
+  - Passing
+  - Default Props
+- List and keys
+- React Router DOM
+- Hooks
+  - useState
+  - useEffect
+  - useContext/ContextAPI
 
 # Creating a React App
 
-    (old)
-    > npx create-react-app <app-name>
-    > npm start
+- while naming app, Use lowercase letters and hyphens only (npm doesn’t allow spaces or capitals).
 
-    (latest)
-    > npm create vite@latest
-    > npm run dev
-    Setup:
-    > cd
-    > npm i
-    > npm run dev
+  (old)
+
+  > npx create-react-app <app-name>
+  > npm start
+
+  (latest)
+
+  > npm create vite@latest
+  > npm run dev
+  > Setup:
+  > cd
+  > npm i
+  > npm run dev
 
 # Task 1:
 
