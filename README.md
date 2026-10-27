@@ -117,8 +117,6 @@
 
 # Projects
 
-- Counter
 - ToDo
 - Weather App
-- Password Generator
 - Notes Application
