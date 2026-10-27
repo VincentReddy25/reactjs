@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from 'axios'
+import './App.css'
 
 export default function App() {
 
@@ -17,23 +18,29 @@ export default function App() {
   }
 
   return (
-    <>
-      <h1>Current weather</h1>
+    <main className="weather-app">
+      <section className="weather-card">
+        <h1>Current weather</h1>
 
-      <input type="text" onChange={e => setCity(e.target.value)} />
-      <button onClick={getWeatherData}>get weather</button>
-      <div>
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Enter a city"
+            value={city}
+            onChange={e => setCity(e.target.value)}
+          />
+          <button onClick={getWeatherData}>Get weather</button>
+        </div>
 
         {data && (
-          <>
+          <div className="weather-details">
             <h2>{data.name}</h2>
             <p>Temperature: {data.main.temp}°C</p>
             <p>Weather: {data.weather[0].description}</p>
             <p>Humidity: {data.main.humidity}%</p>
-          </>
+          </div>
         )}
-
-      </div>
-    </>
+      </section>
+    </main>
   )
 }

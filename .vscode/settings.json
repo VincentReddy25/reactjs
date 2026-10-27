@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^git -C '/Users/vincent/Library/CloudStorage/OneDrive-Personal/_CV CORP/React/_StudentFIles' status --short$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
