@@ -14,7 +14,6 @@
 - Hooks
   - useState
   - useEffect
-  - useContext/ContextAPI
 
 # Creating a React App
 
@@ -119,4 +118,3 @@
 
 - ToDo
 - Weather App
-- Notes Application
